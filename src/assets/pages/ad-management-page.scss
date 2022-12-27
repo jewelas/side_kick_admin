@@ -1,0 +1,357 @@
+
+
+.ad-management-page-outer {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    width: 100%;
+    height: 100%;
+    background-color: $skdarkblue;
+
+    .fixedHeader {
+        height: 3rem;
+        width: 100%;
+        position: fixed;
+        z-index: 10;
+        background-color: $skprimary;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+
+        .headerTitle {
+            color: white;
+            font-family: 'Rubik';
+            font-size: 1.5rem; 
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+
+    .left-side-drawer {
+        flex-shrink: 0;
+        white-space: nowrap;
+        box-sizing: border-box;
+        font-weight: 500;
+
+        &.open {
+            width: 20rem;
+            transition: width 0.3s ease-in-out;
+            overflow-x: hidden;
+
+            .MuiDrawer-paper {
+                width: 20rem;
+                transition: width 0.3s ease-in-out;
+                overflow-x: hidden;
+            }
+        }
+
+        &.closed {
+            width: calc(5rem + 1px);
+            transition: width 0.3s ease-in-out;
+            overflow-x: hidden;
+
+            .MuiDrawer-paper {
+                width: calc(5rem + 1px);
+                transition: width 0.3s ease-in-out;
+                overflow-x: hidden;
+            }
+        }
+
+        .MuiPaper-root {
+            background-color: $skprimary;
+        }
+
+        .sidebar-header span {
+            opacity: 1;
+            width: fit-content;
+            transition: all .3s ease-in-out;
+        
+            &.hide {
+                opacity: 0;
+                width: 0;
+                margin-left: 0 !important;
+                padding: 0 !important;
+                transition: all .3s ease-in-out ;
+            }
+
+            .skLogo {
+                width: 1.2rem;
+                padding-bottom: 0.2rem;
+            }
+        }
+        
+        .open-close-icon {
+            font-size: 1.75rem;
+            width: 5rem;
+            border-radius: 0;
+            margin-top: .25rem;
+            color: white;
+            transition: all 0.3 ease-in-out;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -ms-flex-direction: row;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .open-close-icon:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+            opacity: .7;
+        }
+
+        .left-drawer-list {
+
+            .left-drawer-list-item {
+                padding: 1rem 1.5rem;
+                background-color: transparent;
+                color: hsla(0,0%,100%,.65);
+                border-radius: 0;
+                text-align: left;
+                height: 2.75rem;               
+
+                &.active {
+                    color: white;
+
+                    .left-drawer-list-item-icon {
+                        color: white;
+                    }
+                }
+
+                .left-drawer-list-item-icon {
+                    font-size: 1.25rem;
+                    margin-left: .1rem;
+                    margin-right: .55rem;
+                    transition: color 0.3s ease-in-out;
+                    color: hsla(0,0%,100%,.65);
+                    min-width: 2rem;
+                    transition: all 200ms ease-in-out;
+                    display: -webkit-box;
+                    display: -moz-box;
+                    display: -ms-flexbox;
+                    display: -webkit-flex;
+                    display: flex;
+                    -ms-flex-direction: row;
+                    -webkit-flex-direction: row;
+                    flex-direction: row;
+                    -moz-box-pack: center;
+                    -ms-flex-pack: center;
+                    -webkit-justify-content: center;
+                    justify-content: center;
+                    -webkit-align-items: center;
+                    align-items: center;
+                }
+
+                .left-drawer-list-item-text span{
+                    font-family: 'Rubik';                 
+                    font-size: 1.06rem;
+                    font-weight: 700 !important;
+                    transition: all 0.3s ease-in-out;           
+                    opacity: 1;
+                }
+
+                .left-drawer-list-item-text.hide span {
+                    opacity: 0 !important;
+                    transition: all .3s ease-in-out;
+                }
+
+                &:hover {
+                    background: rgba(7,9,25,.15);
+     
+                   .left-drawer-list-item-icon {
+                        color: white;
+                    }
+
+                    .left-drawer-list-item-text span{
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .content-body {
+        position: absolute;
+        top: 0rem;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        transition: all 0.3s ease-in-out;
+
+        &.drawer-open {
+            width: calc(100% - 20rem);
+            left: 20rem;
+        }
+
+        &.drawer-closed {
+            width: calc(100% - 5rem);
+            left: 5rem;
+        }
+
+        .ad-management-content-pane {
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            width: 100%;
+            height: calc(100% - 6rem);
+            padding-top: 4rem;
+
+            &.ads {
+                height: calc(100% - 8rem);
+            }
+
+            &.camps {
+                height: calc(100% - 8rem);
+            }
+
+            &.no-account {
+                .stats-container {
+                    height: 7rem;
+                    overflow-y: hidden;
+
+                    &.ads {
+                        height: 7rem;
+                    }   
+
+                    &.camps {
+                        height: 7rem;
+                    }   
+                }
+
+                .table-outer {
+                    height: calc(100% - 6rem);
+                }
+            }
+
+            .stats-container {
+                position: relative;
+                width: 100%;
+                height: 21rem;
+                padding: 1rem 10rem 0rem;
+                overflow-y: auto;
+                overflow-x: hidden;
+                transition: height 0.3s ease-in-out;
+                
+                &.ads {
+                    height: 24.5rem;
+                }        
+
+                &.camps {
+                    height: 16.5rem;
+                }  
+
+                .MuiGrid-root {
+                    padding: 1rem;
+                    background-color: $skprimary;
+                    border-radius: 0.5rem;
+                }
+
+                .MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl {
+                    color: white;
+                    font-family: 'Rubik';
+                    font-size: 1.15rem;
+                    font-weight: 500;
+                }
+            }
+
+            .table-outer {
+                position: relative;
+                width: 100%;
+                height: calc(100% - 15rem);
+                padding: 2rem 10rem 1rem;
+                transition: height 0.3s ease-in-out;
+
+                &.ads {
+                    height: calc(100% - 16.5rem);
+                }
+
+                &.camps {
+                    height: calc(100% - 16.5rem);
+                }
+
+                .dgrid-container {
+                    position: relative;
+                    width: 100%;
+                    height: calc(100% - 4rem);
+                    padding: 1rem;
+                    background-color: $skprimary;
+                    border-radius: 0.5rem;
+
+                    .dgrid-outer {
+                        .MuiDataGrid-columnHeader:focus, .MuiDataGrid-cell:focus {
+                            outline: none;
+                        }
+
+                        .edit-button {
+
+                        }
+                    }
+
+                    .MuiDataGrid-root {
+                        border: none !important;
+                        font-family: 'Rubik';
+                        color: white;
+                    }
+
+                }
+            }
+
+            .MuiSvgIcon-root.MuiDataGrid-iconSeparator {
+                display: none !important;
+            }
+
+            .MuiDataGrid-root .MuiDataGrid-row:hover {
+                background-color: rgba(255, 255, 255, 0.04);
+            }
+
+            .MuiDataGrid-root .MuiDataGrid-cell, .MuiDataGrid-columnsContainer {
+                border-bottom: 1px solid rgb(128,128,128);
+            }
+        }
+    }
+}
+
+.ad-management-form-container {
+    position: relative;
+    width: 34rem;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: $skprimary;
+    padding: 2rem;
+
+    .MuiFormControl-fullWidth {
+        width: 100% !important;
+    }
+
+    .MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl, .MuiTypography-root.MuiFormControlLabel-label, .MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-animated {
+        color: white;
+        font-family: 'Rubik';
+        font-size: 1.15rem;
+        font-weight: 500;
+    }
+
+    .image-preview {
+        position: relative;
+        max-width: 100%;
+    }
+}

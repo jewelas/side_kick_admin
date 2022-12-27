@@ -1,0 +1,96 @@
+@import './assets/widgets/helpers-utilities/scss/functions';
+@import './assets/core/mixins/';
+@import './assets/core/variables';
+
+@import './assets/pages/ad-management-page.scss';
+
+#sidekick-loading-screen {
+    z-index: 1000;
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    &.active {
+        pointer-events: auto;
+        opacity: 1;
+    }
+}
+
+.app-content {
+  background: none;
+}
+
+.app-wrapper {
+  background: none;
+}
+
+.divider-v {
+  background-color: $skprimary;
+}
+
+.btnLaunchIcon {
+  margin: -0.1rem 0 -0.1rem 0.5rem !important;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0 , 0, .15);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: .65rem;
+  height: .65rem;
+}
+
+*::-webkit-scrollbar-corner {
+  background: none;
+}
+
+*::-webkit-scrollbar-track {
+  background: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.203);
+}
+
+/* Works on Chrome, Edge, and Safari */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar-corner {
+  display: none;
+}
+
+body::-webkit-scrollbar-track {
+  display: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  display: none;
+}
